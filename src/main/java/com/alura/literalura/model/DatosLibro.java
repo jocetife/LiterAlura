@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @JsonIgnoreProperties (ignoreUnknown = true)
 public record DatosLibro(
     @JsonAlias("title") String titulo,
-    @JsonAlias("authors") ArrayList<DatosPersona> autor,
+    @JsonAlias("authors") ArrayList<Persona> autores,
     @JsonAlias("languages") ArrayList<String> lenguajes,
     @JsonAlias("download_count") Integer numeroDeDescargas,
     @JsonAlias("id") String id,
