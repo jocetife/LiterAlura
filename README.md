@@ -9,12 +9,12 @@ The console-based application provides five main functionalities:
 ### 1. Search for a book by title
 
 - The user enters the book title.
-
+  <img width="588" height="152" alt="image" src="https://github.com/user-attachments/assets/4ae0190f-a433-473e-8a68-6d3af8c5c0ad" />
 - The application queries the Gutendex API to retrieve book information.
-
 - The book is registered in the database if it does not already exist.
-
 - 'Example:' Searching for Pride and Prejudice by Jane Austen returns the title, author, language (EN), and number of downloads.
+  <img width="546" height="264" alt="image" src="https://github.com/user-attachments/assets/b0c106bd-8d6f-4cd5-aaca-0571c6cbeef2" />
+
 
 ### 2. List registered books
 
