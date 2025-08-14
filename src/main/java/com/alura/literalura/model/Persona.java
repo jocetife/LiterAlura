@@ -1,16 +1,14 @@
 package com.alura.literalura.model;
 
 import java.util.List;
-
-import org.springframework.data.annotation.Transient;
-
-import com.fasterxml.jackson.annotation.JsonAlias;
+import java.util.stream.Collectors;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,10 +17,10 @@ public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @JsonAlias("name") private String nombre;
-    @JsonAlias("birth_year") private Integer nacimiento;
-    @JsonAlias("death_year") private Integer fallecimiento;
-    @ManyToMany(mappedBy = "autores")
+    private String nombre;
+    private Integer nacimiento;
+    private Integer fallecimiento;
+    @OneToMany(mappedBy = "autor", fetch = FetchType.EAGER)
     private List<Libro> libros;
 
     public Persona() {}
@@ -61,5 +59,16 @@ public class Persona {
     }
     public void setFallecimiento(Integer fallecimiento) {
         this.fallecimiento = fallecimiento;
+    }
+
+    @Override
+    public String toString() {
+        return "-------------AUTOR-------------\n" +
+                "Id=        '" + id + '\'' + "\n" +
+                "Nombre=    '" + nombre + '\'' + "\n" +
+                "Nacimiento= " + nacimiento + "\n" +
+                "Fallecimiento= " + fallecimiento + "\n" +
+                "Libros=    " + (libros.stream().map(Libro::getTitulo).collect(Collectors.joining(", "))) + "\n" +
+                "-------------------------------\n";
     }
 }
