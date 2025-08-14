@@ -6,7 +6,7 @@ This project consists of developing a book catalog application where users can r
 
 The console-based application provides five main functionalities:
 
-1. Search for a book by title
+### 1. Search for a book by title
 
 - The user enters the book title.
 
@@ -16,23 +16,23 @@ The console-based application provides five main functionalities:
 
 - 'Example:' Searching for Pride and Prejudice by Jane Austen returns the title, author, language (EN), and number of downloads.
 
-2. List registered books
+### 2. List registered books
 
 - Displays all books currently stored in the database.
 
-3. List registered authors
+### 3. List registered authors
 
 - Displays all authors in the system.
 
 - Authors are listed only once, even if they have multiple books.
 
-4. List authors alive in a specific year
+### 4. List authors alive in a specific year
 
 - Users can query authors based on a year (e.g., 1600).
 
 - Only authors whose lifespan includes that year are shown.
 
-5. List books by language
+### 5. List books by language
 
 - Users can search for books by language code (e.g., ES, EN, FR, PT).
 
